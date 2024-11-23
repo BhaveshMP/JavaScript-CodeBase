@@ -1,0 +1,77 @@
+// Using constructor - singleton
+
+const tinderUser = new Object() // Singleton
+// const tinderUser = {} // Non - Singleton
+
+tinderUser.id = "BPatil666"
+tinderUser.name = "Bhavesh"
+
+const regularUser = {
+    email: "bh@gmail.com",
+    fullname : {
+        fname : "bhavesh",
+        lname : "patil",
+    }
+}
+console.log(regularUser.fullname.fname)
+
+const obj1 = {1:"a", 2:"b", 3:"c"}
+const obj2 = {4:"d", 5:"e", 6:"f"}
+const obj3 = Object.assign({}, obj1,obj2)
+console.log(obj3)
+
+//Spread
+const obj4 = {...obj1, ...obj2, ...obj3}
+console.log(obj4)
+
+const objArray = [
+    {
+        email:"abc@gmail.com",
+        pass : "abc#123"
+    },
+    {
+        email:"abc@gmail.com",
+        pass : "abc#123"
+    },
+    {
+        email:"abc@gmail.com",
+        pass : "abc#123"
+    }
+]
+console.log(objArray[1].email)
+
+console.log(tinderUser)
+console.log(Object.keys(tinderUser))
+
+console.log(Object.values(tinderUser))
+console.log(Object.entries(tinderUser))
+
+console.log(tinderUser.hasOwnProperty('id'))
+
+
+const course = {
+    coursename : "excel",
+    price: 999,
+    instructor : "bhavesh"
+}
+
+// course.instructor
+
+// Destructuring
+const {instructor: tutor } = course
+console.log(tutor)
+
+// API 
+/*
+{
+    "name": "Bhavesh",
+    "coursename": "python",
+    "price": "6000"
+}
+
+[
+    {},
+    {},
+    {}
+]
+*/
