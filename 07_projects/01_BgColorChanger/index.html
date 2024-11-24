@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="logic.js" type="module"></script>
     <style>
-        #red{
-            background-color: orangered;
+        body{
+            background-color: black;
+            color: antiquewhite;
+        }
+        .colors{
+            padding: 30px;
+            margin: 200px 10px;
+            color: blue;
+            font-weight: bold;
+        }
+        #orange{
+            background-color: orange;
         }
         #blue{
             background-color: skyblue;
@@ -21,13 +32,18 @@
 </head>
 <body>
     <h2>Color Sceneme Swithcher</h2>
-    <div>
-        <span id="red" class="colors">red</span>
+    <br>
+    <br>
+    <div id="container">
+        <span id="orange" class="colors">orange</span>
         <span id="blue" class="colors">blue</span>
         <span id="green" class="colors">green</span>
         <span id="yellow" class="colors">yellow</span>
     </div>
-
+    <br>
+    <br>
     <p>Try clicking on one of the colors above to change the background color</p>
+    <h1 id="PH">JAKE</h1>
 </body>
+
 </html>
