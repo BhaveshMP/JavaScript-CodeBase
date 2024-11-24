@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <title>Edit and remove</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Edit and remove</h1>
+    <ul id="language">
+        <li class="li-class">Javascirpt</li>
+        <li class="li-class">Python</li>
+        <li class="li-class">CPP</li>
+    </ul>
+
+    <script>
+        function addLanguage(langName){
+           const li = document.createElement('li') 
+           li.innerHTML =  `${langName}`
+           document.getElementById('language').appendChild(li)
+        }
+
+        function addLanguageOpti(langName){
+            const li = document.createElement(li)
+            li.appendChild(document.createTextNode(langName))
+            document.getElementById('language').appendChild(li)
+        }
+        addLanguage('C')
+        addLanguage('goLang')
+
+        //edit
+        const secondLang = document.querySelector("li:nth-child(2)")
+        //secondLang.innerHTML = 'Mojo'
+        const newLi = document.createElement('li')
+        newLi.textContent = 'Java'
+        secondLang.replaceWith(newLi)
+
+        //remove
+        const lastLang = document.querySelector('li:last-child')
+        lastLang.remove()
+    </script>
+</body>
+</html>

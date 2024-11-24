@@ -12,8 +12,62 @@
 </head>
 <body class="bg-black">
     <div>
-        <h1 class="heading"> DOM learning</h1>
+        <h1 style="color: chocolate;" id='heading1' class="heading"> DOM learning</h1>
         <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div>
+        <ul>
+            <li class="li_class">one</li>
+            <li class="li_class">two</li>
+            <li class="li_class">three</li>
+        </ul>
+    </div>
+
+    <div id="div3">
+        <p id="para1">Lorem ipsum dolor sit amet.
+            <b style="display:none" id="bold1">Bhavesh</b>
+            Hey
+        </p>
     </div>
 </body>
 </html>
+
+// DOM Manipulation
+// Selector
+id - document.getElementById('id')
+class -  document.getElementsByClassName('className')
+        - return HTMLCollections (can be converted to Array using 'Array.of(HTMLCollection)')
+tag - document.getElementsByTagName("h1")
+
+//manipulation
+
+//1. Attribute
+document.getElementById('id').id
+document.getElementById('id').getAttribute('id')
+document.getElementById('id').setAttribute('id','id2')
+
+//2. style
+id.style.color = 'red'
+document.getElementById('id').style.color = 'red'
+
+//3. content
+document.getElementById('id').innerHTML = 'cat'
+document.getElementById('id').textContent = 'dog'
+
+// Properties
+innetHTML
+html code + text
+
+innerContent
+text (seen text only)
+
+textContent
+text (unseen text only)
+
+// Query Selector
+document.querySelector(#id/ .className / tag)
+-return first element
+
+document.querySelectorAll(#id/ .className / tag)
+-return a NodeList
+
