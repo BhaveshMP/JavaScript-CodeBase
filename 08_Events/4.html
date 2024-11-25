@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Changer</title>
+</head>
+<style>
+    .circle{
+        border: solid black 2px;
+        padding: 50px;
+        margin: 50px;
+        border-radius: 50%;
+    }
+</style>
+<body>
+    <h2 id="firstHeading">Heading</h2>
+    <button class="startBtn">Start</button>
+    <button class="stopBtn">Stop</button>
+<br><br><br>
+    <div>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+    </div>
+</body> 
+<script>
+
+    const colorChangerOpti = () => {
+
+        const hexLi = "0123456789ABCDEF"
+        let hexColor = "#"
+        for (let i = 0; i < 6; i++) {
+            let num = Math.floor(Math.random() * 16)
+            hexColor+=hexLi[num]
+        }      
+        document.body.style.backgroundColor = hexColor ;
+    }
+
+    const colorChanger = () => {
+        let num = Math.floor(Math.random() * 1000000 + 1)
+        document.body.style.backgroundColor = `#${num}` ;
+    }
+
+    let inter1
+    document.querySelector(".startBtn").addEventListener('click',()=>{
+        inter1 = setInterval(colorChangerOpti, 1000);
+    })
+
+    document.querySelector(".stopBtn").addEventListener('click',()=>{
+        clearInterval(inter1)
+    })
+</script>
+</html>
