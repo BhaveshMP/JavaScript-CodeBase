@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #container{
+        margin: 50px;
+        padding: 10px;
+        border: solid black 2px;
+        width: 500px;
+        height: 200px;
+        font-size: 30px;
+    }
+    img{
+        width: 200px;
+        height: 200px;
+    }
+    body{
+        
+    }
+</style>
 <body>
-    
+    <div id="container">
+        <span id="photo">
+            <img src="" alt="Loading">
+        </span>
+        <span id="followers"></span>
+    </div>
 </body>
 <script>
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
@@ -14,10 +36,22 @@
     xhr.open('GET', requestUrl)
     xhr.onreadystatechange = function(){
         console.log(xhr.readyState)
-    if(xhr.readyState === 4){
-        const data = JSON.parse(this.readyState)
+    if(xhr.readyState == 4){
+        const data = JSON.parse(this.responseText)
         console.log(data.followers)
-    }
+        
+        let followers = data.followers
+        let name = data.login
+        let avatar = data.avatar_url
+
+        let photo = document.getElementById("photo").children[0]
+        photo.src = avatar;
+            
+        // Update followers count
+        let followersSpan = document.getElementById("followers");
+        followersSpan.textContent = `Name ${name}  Followers: ${followers} `;
+
+    }   
     }
     xhr.send()
 
